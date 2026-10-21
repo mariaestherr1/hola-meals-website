@@ -57,6 +57,8 @@ holidayForm.addEventListener('submit', (event) => {
   const name = document.querySelector('#holiday-name').value.trim();
   const deliveryDate = document.querySelector('#holiday-date').value;
   const total = `€${(count * holidayPrice).toFixed(2)}`;
+  const holidayNewsletterChecked = document.querySelector('#holiday-newsletter').checked;
+  const holidayEmail = document.querySelector('#holiday-email').value.trim();
   const subject = `Holiday Dinner Set request from ${name} — ${count} sets`;
   const body = [
     'Hello Hola Meals!,', '',
@@ -70,18 +72,25 @@ holidayForm.addEventListener('submit', (event) => {
     '',
     `Delivery date: ${deliveryDate}`,
     `Name: ${name}`,
-    `Email: ${document.querySelector('#holiday-email').value.trim()}`,
+    `Email: ${holidayEmail}`,
     `Phone: ${document.querySelector('#holiday-phone').value.trim()}`,
     `Delivery address: ${document.querySelector('#holiday-address').value.trim()}`,
     `Delivery area: ${document.querySelector('#holiday-area').value}`,
     `Notes: ${document.querySelector('#holiday-notes').value.trim() || 'None'}`,
-    `Newsletter signup: ${document.querySelector('#holiday-newsletter').checked ? 'Yes' : 'No'}`,
+    `Newsletter signup: ${holidayNewsletterChecked ? 'Yes — double opt-in confirmation requested' : 'No'}`,
     '',
     'I understand this is a request and that availability, allergens and payment will be confirmed by Hola Meals!.',
     'I understand that the order deadline is Friday 18 December 2026 at 12 PM (noon).'
   ].join('\n');
 
-  window.location.href = `mailto:holamealsutrecht@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (holidayNewsletterChecked) {
+    document.querySelector('#holiday-newsletter-email').value = holidayEmail;
+    document.querySelector('#holiday-newsletter-form').submit();
+  }
+
+  window.setTimeout(() => {
+    window.location.href = `mailto:holamealsutrecht@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }, holidayNewsletterChecked ? 350 : 0);
 });
 
 const newsletterForm = document.querySelector('#sib-form');

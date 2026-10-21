@@ -21,7 +21,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Hola Meals! home"><img class="brand-logo" src="assets/hola-meals-logo.svg" alt="" /><span>Hola Meals!</span></a>
-    <nav aria-label="Main navigation"><a href="#menu">Menu Collection</a><a href="#holiday">Christmas Special</a><a href="#how">How it works</a><a href="#story">My story</a><a class="nav-cta" href="#holiday-order">Order Christmas dinner</a><button class="language-toggle" type="button" aria-label="Change language">English</button></nav>
+    <nav aria-label="Main navigation"><a href="#menu">Menu Collection</a><a href="#holiday">Christmas Special</a><a href="#how">How it works</a><a href="#story">My story</a><a href="#news-form">Newsletter</a><a class="nav-cta" href="#holiday-order">Order Christmas dinner</a><button class="language-toggle" type="button" aria-label="Change language">English</button></nav>
     <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
   </header>
 
@@ -88,10 +88,15 @@
           <label>Delivery address<input type="text" id="holiday-address" autocomplete="street-address" required /></label>
           <label>Delivery area<select id="holiday-area" required><option value="">Select your neighbourhood</option><option>Leidsche Rijn</option><option>Terwijde</option><option>De Meern</option></select></label>
           <label>Notes <span>(optional)</span><textarea id="holiday-notes" rows="2" placeholder="Questions or delivery notes..."></textarea></label>
-          <label class="newsletter-option"><input type="checkbox" id="holiday-newsletter" /><span><strong>Keep me at the table</strong> Send me Hola Meals! launch news, upcoming menus and occasional updates. I can unsubscribe at any time.</span></label>
+          <label class="newsletter-option"><input type="checkbox" id="holiday-newsletter" /><span><strong>Keep me at the table</strong> Send me Hola Meals! launch news, upcoming menus and occasional updates. I can unsubscribe at any time. We will send a separate email to confirm my subscription.</span></label>
           <p class="holiday-error" id="holiday-error" role="alert"></p>
           <button class="button button-coral submit-button" type="submit">Request my Holiday Dinner Sets <span>→</span></button>
           <p class="form-note">No payment yet. We’ll confirm availability, allergens and payment details by email.<br /><a href="#privacy">How we use your details</a></p>
+        </form>
+        <form id="holiday-newsletter-form" method="post" target="brevo-submit-frame" action="https://4beddc33.sibforms.com/serve/MUIFAId1rABE76ofbCW7j0yFqJeXcJHiaSPv7KFVCMAPWclDXk6TXGoFdFR6Hhl_rRJn2v7_ScCn0wWZRBh00f6o5UTXJPy4O_DE6o978wM0TDdC2Yo3reG57mUues73OjsjvMIY-Wwyrdhufe0_WL-lT5YfAkOtnuWsGCJPvw-TzrTYPC3fksw7w-YDUMsXBk0ZJypWEbgTzgH8wg==" hidden aria-hidden="true">
+          <input type="email" name="EMAIL" id="holiday-newsletter-email" />
+          <input type="text" name="email_address_check" value="" />
+          <input type="hidden" name="locale" value="nl" data-brevo-locale />
         </form>
       </div>
     </section>
@@ -141,7 +146,7 @@
           <p class="brevo-consent">By clicking “Yes, keep me updated”, you subscribe to news and menu updates by email. You can unsubscribe at any time. Read our <a href="#privacy">privacy notice</a>.</p>
           <button class="button button-coral submit-button" form="sib-form" type="submit"><svg class="icon progress-indicator__icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /></svg><span>Yes, keep me updated</span><span class="button-arrow" aria-hidden="true">→</span></button>
           <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" />
-          <input type="hidden" id="brevo-locale" name="locale" value="nl" />
+          <input type="hidden" id="brevo-locale" name="locale" value="nl" data-brevo-locale />
         </form>
         <iframe class="brevo-submit-frame" name="brevo-submit-frame" title="Newsletter submission" tabindex="-1" aria-hidden="true"></iframe>
         <p class="form-note">Regular test orders are arranged personally through WhatsApp or email.<br /><a href="#privacy">How we use your details</a></p>
