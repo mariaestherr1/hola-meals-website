@@ -15,21 +15,10 @@ nav.querySelectorAll('a').forEach((link) => {
   });
 });
 
-document.querySelector('#news-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const name = document.querySelector('#news-name').value.trim();
-  const email = document.querySelector('#news-email').value.trim();
-  const subject = `Hola Meals! news signup — ${name}`;
-  const body = [
-    'Hello Hola Meals!,',
-    '',
-    'I would like to receive launch news, menus and occasional updates.',
-    `Name: ${name}`,
-    `Email: ${email}`,
-    '',
-    'I understand that I can unsubscribe at any time. ¡Gracias!'
-  ].join('\n');
-  window.location.href = `mailto:holamealsutrecht@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+document.querySelectorAll('a[href="#privacy"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    document.querySelector('#privacy').open = true;
+  });
 });
 
 const holidayForm = document.querySelector('#holiday-order-form');

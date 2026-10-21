@@ -16,6 +16,7 @@
   <link rel="apple-touch-icon" href="assets/hola-meals-logo-email.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
   <link rel="stylesheet" href="styles.css" /><script src="script.js" defer></script><script src="language.js" defer></script>
 </head>
 <body>
@@ -91,7 +92,7 @@
           <label class="newsletter-option"><input type="checkbox" id="holiday-newsletter" /><span><strong>Keep me at the table</strong> Send me Hola Meals! launch news, upcoming menus and occasional updates. I can unsubscribe at any time.</span></label>
           <p class="holiday-error" id="holiday-error" role="alert"></p>
           <button class="button button-coral submit-button" type="submit">Request my Holiday Dinner Sets <span>→</span></button>
-          <p class="form-note">No payment yet. We’ll confirm availability, allergens and payment details by email.</p>
+          <p class="form-note">No payment yet. We’ll confirm availability, allergens and payment details by email.<br /><a href="#privacy">How we use your details</a></p>
         </form>
       </div>
     </section>
@@ -122,19 +123,60 @@
         </div>
         <p class="fixed-menu-note"><strong>A small note:</strong> each week’s selection comes from the current rotating collection and is fixed, so substitutions are not available during testing.</p>
       </div>
-      <form class="order-form launch-signup" id="news-form">
+      <div class="order-form launch-signup" id="news-form">
         <p class="eyebrow terracotta">Be the first to know</p>
         <h3>Join the Hola Meals! news list.</h3>
         <p>Hear when public ordering opens and receive new menus, launch news and occasional updates.</p>
-        <label>Your name<input type="text" id="news-name" autocomplete="name" required /></label>
-        <label>Email address<input type="email" id="news-email" autocomplete="email" required /></label>
-        <label class="newsletter-option"><input type="checkbox" id="news-consent" required /><span><strong>Yes, keep me updated</strong> I would like to receive Hola Meals! news and understand that I can unsubscribe at any time.</span></label>
-        <button class="button button-coral submit-button" type="submit">Sign me up for news <span>→</span></button>
-        <p class="form-note">Regular test orders are arranged personally through WhatsApp or email.</p>
-      </form>
+        <div id="error-message" class="sib-form-message-panel brevo-message brevo-message-error" role="alert"><span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again later.</span></div>
+        <div id="success-message" class="sib-form-message-panel brevo-message brevo-message-success" role="status"><span class="sib-form-message-panel__inner-text">Almost there! Check your inbox and confirm your subscription using the email we sent you.</span></div>
+        <form id="sib-form" class="brevo-signup" method="post" action="https://4beddc33.sibforms.com/serve/MUIFAId1rABE76ofbCW7j0yFqJeXcJHiaSPv7KFVCMAPWclDXk6TXGoFdFR6Hhl_rRJn2v7_ScCn0wWZRBh00f6o5UTXJPy4O_DE6o978wM0TDdC2Yo3reG57mUues73OjsjvMIY-Wwyrdhufe0_WL-lT5YfAkOtnuWsGCJPvw-TzrTYPC3fksw7w-YDUMsXBk0ZJypWEbgTzgH8wg==" data-type="subscription">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" for="EMAIL" data-required="*">Email address</label>
+                <div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@example.com" data-required="true" required /></div>
+              </div>
+              <label class="entry__error entry__error--primary"></label>
+            </div>
+          </div>
+          <p class="brevo-consent">By clicking “Yes, keep me updated”, you subscribe to news and menu updates by email. You can unsubscribe at any time. Read our <a href="#privacy">privacy notice</a>.</p>
+          <button class="button button-coral submit-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /></svg><span>Yes, keep me updated</span><span aria-hidden="true">→</span></button>
+          <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" />
+          <input type="hidden" id="brevo-locale" name="locale" value="nl" />
+        </form>
+        <p class="form-note">Regular test orders are arranged personally through WhatsApp or email.<br /><a href="#privacy">How we use your details</a></p>
+      </div>
+    </section>
+
+    <section class="privacy-section section-pad" aria-labelledby="privacy-title">
+      <details class="privacy-notice" id="privacy">
+        <summary><span id="privacy-title">Privacy &amp; cookies</span><small>No tracking cookies or advertising</small></summary>
+        <div class="privacy-content">
+          <p class="privacy-updated">Last updated: 21 October 2026</p>
+          <h3>Who is responsible</h3>
+          <p>Hola Meals! is run by Esther Rodríguez in Utrecht. For privacy questions or requests, email <a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a>.</p>
+
+          <h3>Information you send</h3>
+          <p>The order form prepares an email in your own email application; the website itself does not submit or store that order form. When you subscribe to the newsletter, your email address and subscription record are sent directly to Brevo, our email marketing provider. Depending on your request, the information we process may also include your name, phone number, delivery address, order choices and delivery notes.</p>
+
+          <h3>Why we use it</h3>
+          <p>We use order information to answer your request, confirm availability and allergens, arrange delivery and payment, fulfil an order and maintain any legally required administration. With your consent, we use your email for news and menu updates. Newsletter subscriptions use double confirmation, and you can unsubscribe at any time using the link in every newsletter or by emailing us.</p>
+
+          <h3>Retention and sharing</h3>
+          <p>We keep correspondence only as long as reasonably needed for your request or customer relationship. Financial and order records are retained for the period required by Dutch law. Newsletter details are kept until you unsubscribe, after which a limited suppression record may be retained to respect your choice. We do not sell your information. Brevo processes newsletter information on our behalf; we otherwise share information only with service providers needed to operate the service, or where required by law.</p>
+
+          <h3>Cookies and website technology</h3>
+          <p>This website does not use advertising cookies, tracking cookies or visitor analytics. It saves only your Dutch or English language choice in your browser’s local storage. You can remove this through your browser settings. The site is hosted by GitHub Pages and loads its typefaces from Google Fonts. The newsletter form loads the technical components needed to submit subscriptions securely to Brevo. These providers may receive standard technical information such as your IP address. Google Search Console is used outside the website to monitor search visibility and does not place tracking cookies on this site.</p>
+
+          <h3>Your rights</h3>
+          <p>You may ask to access, correct or delete your personal information, restrict or object to its use, or withdraw newsletter consent. Where applicable, you may also request data portability. Contact us at the email address above. You may lodge a complaint with the Dutch Data Protection Authority, the Autoriteit Persoonsgegevens.</p>
+        </div>
+      </details>
     </section>
   </main>
 
-  <footer><a class="brand footer-brand" href="#top"><img class="brand-logo" src="assets/hola-meals-logo.svg" alt="" /><span>Hola Meals!</span></a><p>Nutritious meals, with a taste of Mexico. Made with love in Utrecht.</p><a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a><small>© <span id="year"></span> Hola Meals!</small></footer>
+  <footer><a class="brand footer-brand" href="#top"><img class="brand-logo" src="assets/hola-meals-logo.svg" alt="" /><span>Hola Meals!</span></a><p>Nutritious meals, with a taste of Mexico. Made with love in Utrecht.</p><a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a><a href="#privacy">Privacy &amp; cookies</a><small>© <span id="year"></span> Hola Meals!</small></footer>
+  <script>window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';window.LOCALE='nl';window.EMAIL_INVALID_MESSAGE=window.SMS_INVALID_MESSAGE='Vul een geldig e-mailadres in.';window.REQUIRED_ERROR_MESSAGE='Vul je e-mailadres in.';window.GENERIC_INVALID_MESSAGE='Vul een geldig e-mailadres in.';window.INVALID_NUMBER='Vul een geldig nummer in.';window.INVALID_DATE='Vul een geldige datum in.';window.REQUIRED_MULTISELECT_MESSAGE='Selecteer ten minste één optie.';window.translation={common:{selectedList:'{quantity} list selected',selectedLists:'{quantity} lists selected',selectedOption:'{quantity} selected',selectedOptions:'{quantity} selected'}};window.AUTOHIDE=true;</script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
