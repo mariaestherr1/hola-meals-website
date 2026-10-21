@@ -194,15 +194,12 @@ h1 em { color: var(--gold); font-weight: 600; }
 .order-copy { position: sticky; top: 40px; }
 .order-copy > p:not(.eyebrow) { color: var(--muted); line-height: 1.7; max-width: 570px; }
 .box-options { display: grid; gap: 12px; margin-top: 38px; }
-.box-card { align-items: center; background: transparent; border: 1px solid var(--line); border-radius: 14px; color: var(--ink); cursor: default; display: grid; gap: 17px; grid-template-columns: 56px 1fr 32px; padding: 17px; text-align: left; }
-.box-card:hover, .box-card.selected { background: white; border-color: var(--green-800); box-shadow: 0 8px 28px rgba(16,61,50,.08); }
+.box-card { align-items: center; background: white; border: 1px solid var(--green-800); border-radius: 14px; box-shadow: 0 8px 28px rgba(16,61,50,.08); color: var(--ink); display: grid; gap: 17px; grid-template-columns: 56px 1fr; padding: 17px; text-align: left; }
 .box-count { align-items: center; background: var(--green-900); border-radius: 50%; color: white; display: flex; font-family: var(--serif); font-size: 1.35rem; height: 54px; justify-content: center; width: 54px; }
 .box-card strong, .box-card small { display: block; }
 .box-card strong { font-family: var(--serif); font-size: 1.2rem; }
 .box-card small { color: var(--muted); margin-top: 4px; }
 .pack-price { color: var(--green-900); font-family: var(--serif); font-size: 1.45rem; font-weight: 700; white-space: nowrap; }
-.box-card i { align-items: center; background: var(--coral); border-radius: 50%; color: white; display: none; font-style: normal; height: 26px; justify-content: center; width: 26px; }
-.box-card.selected i { display: flex; }
 .fixed-menu-note { border-left: 2px solid var(--terracotta); color: var(--muted); font-size: .75rem; line-height: 1.6; margin: 24px 0 0; padding-left: 14px; }
 .fixed-menu-note strong { color: var(--ink); }
 .order-form { background: white; border-radius: 20px; box-shadow: 0 25px 70px rgba(16,61,50,.1); display: grid; gap: 20px; padding: clamp(25px, 4vw, 48px); }

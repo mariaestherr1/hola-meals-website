@@ -79,6 +79,9 @@ function setLanguage(language) {
   toggle.textContent = dutch ? 'English' : 'Nederlands';
   toggle.setAttribute('aria-label', dutch ? 'Switch to English' : 'Schakel naar Nederlands');
   document.querySelectorAll('[data-brevo-locale]').forEach(field => { field.value = language; });
+  document.querySelectorAll('form[data-action-nl][data-action-en]').forEach(form => {
+    form.action = dutch ? form.dataset.actionNl : form.dataset.actionEn;
+  });
   window.LOCALE = language;
   window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = dutch ? 'Vul een geldig e-mailadres in.' : 'Enter a valid email address.';
   window.REQUIRED_ERROR_MESSAGE = dutch ? 'Vul je e-mailadres in.' : 'Enter your email address.';
