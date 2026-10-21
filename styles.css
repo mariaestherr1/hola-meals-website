@@ -232,8 +232,13 @@ h1 em { color: var(--gold); font-weight: 600; }
 .brevo-message-error { background: #fff1ed; border-color: rgba(198,83,56,.35); color: #7f2e20; }
 .brevo-message-success { background: #edf7f2; border-color: rgba(23,84,67,.28); color: var(--green-900); }
 .brevo-signup .submit-button { font-family: var(--sans); text-align: left; }
-.brevo-signup .submit-button .icon { height: 16px; width: 16px; }
+.brevo-signup .submit-button .icon { display: none; fill: currentColor; height: 16px; width: 16px; }
+.brevo-signup .submit-button.is-submitting .icon { animation: brevo-spin .9s linear infinite; display: block; }
+.brevo-signup .submit-button.is-submitting .button-arrow { display: none; }
+.brevo-signup .submit-button:disabled { cursor: wait; opacity: .78; }
 .brevo-signup .input--hidden { display: none !important; }
+.brevo-submit-frame { border: 0; height: 0; position: absolute; visibility: hidden; width: 0; }
+@keyframes brevo-spin { to { transform: rotate(360deg); } }
 .order-process-note { background: var(--cream); border-left: 3px solid var(--terracotta); border-radius: 8px; color: var(--muted); font-size: .74rem; line-height: 1.55; padding: 15px 17px; }
 .order-process-note strong { color: var(--green-900); display: block; font-size: .82rem; margin-bottom: 7px; }
 .order-process-note ol { margin: 0; padding-left: 19px; }

@@ -84,4 +84,44 @@ holidayForm.addEventListener('submit', (event) => {
   window.location.href = `mailto:holamealsutrecht@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
+const newsletterForm = document.querySelector('#sib-form');
+const newsletterFrame = document.querySelector('.brevo-submit-frame');
+const newsletterEmail = document.querySelector('#EMAIL');
+const newsletterButton = newsletterForm?.querySelector('.submit-button');
+const newsletterSuccess = document.querySelector('#success-message');
+const newsletterError = document.querySelector('#error-message');
+let newsletterSubmitted = false;
+let newsletterFallback;
+
+const finishNewsletterSignup = () => {
+  if (!newsletterSubmitted) return;
+  window.clearTimeout(newsletterFallback);
+  newsletterSubmitted = false;
+  newsletterButton.disabled = false;
+  newsletterButton.classList.remove('is-submitting');
+  newsletterForm.hidden = true;
+  newsletterError.style.display = 'none';
+  newsletterSuccess.style.display = 'block';
+  newsletterSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+};
+
+if (newsletterForm && newsletterFrame && newsletterEmail && newsletterButton) {
+  newsletterEmail.addEventListener('input', () => newsletterEmail.setCustomValidity(''));
+  newsletterEmail.addEventListener('invalid', () => {
+    newsletterEmail.setCustomValidity(document.documentElement.lang === 'nl'
+      ? 'Vul een geldig e-mailadres in.'
+      : 'Enter a valid email address.');
+  });
+
+  newsletterFrame.addEventListener('load', finishNewsletterSignup);
+  newsletterForm.addEventListener('submit', () => {
+    newsletterSubmitted = true;
+    newsletterError.style.display = 'none';
+    newsletterSuccess.style.display = 'none';
+    newsletterButton.disabled = true;
+    newsletterButton.classList.add('is-submitting');
+    newsletterFallback = window.setTimeout(finishNewsletterSignup, 8000);
+  });
+}
+
 document.querySelector('#year').textContent = new Date().getFullYear();

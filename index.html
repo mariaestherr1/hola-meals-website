@@ -16,7 +16,6 @@
   <link rel="apple-touch-icon" href="assets/hola-meals-logo-email.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:wght@600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
   <link rel="stylesheet" href="styles.css" /><script src="script.js" defer></script><script src="language.js" defer></script>
 </head>
 <body>
@@ -129,7 +128,7 @@
         <p>Hear when public ordering opens and receive new menus, launch news and occasional updates.</p>
         <div id="error-message" class="sib-form-message-panel brevo-message brevo-message-error" role="alert"><span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again later.</span></div>
         <div id="success-message" class="sib-form-message-panel brevo-message brevo-message-success" role="status"><span class="sib-form-message-panel__inner-text">Almost there! Check your inbox and confirm your subscription using the email we sent you.</span></div>
-        <form id="sib-form" class="brevo-signup" method="post" action="https://4beddc33.sibforms.com/serve/MUIFAId1rABE76ofbCW7j0yFqJeXcJHiaSPv7KFVCMAPWclDXk6TXGoFdFR6Hhl_rRJn2v7_ScCn0wWZRBh00f6o5UTXJPy4O_DE6o978wM0TDdC2Yo3reG57mUues73OjsjvMIY-Wwyrdhufe0_WL-lT5YfAkOtnuWsGCJPvw-TzrTYPC3fksw7w-YDUMsXBk0ZJypWEbgTzgH8wg==" data-type="subscription">
+        <form id="sib-form" class="brevo-signup" method="post" target="brevo-submit-frame" action="https://4beddc33.sibforms.com/serve/MUIFAId1rABE76ofbCW7j0yFqJeXcJHiaSPv7KFVCMAPWclDXk6TXGoFdFR6Hhl_rRJn2v7_ScCn0wWZRBh00f6o5UTXJPy4O_DE6o978wM0TDdC2Yo3reG57mUues73OjsjvMIY-Wwyrdhufe0_WL-lT5YfAkOtnuWsGCJPvw-TzrTYPC3fksw7w-YDUMsXBk0ZJypWEbgTzgH8wg==" data-type="subscription">
           <div class="sib-input sib-form-block">
             <div class="form__entry entry_block">
               <div class="form__label-row">
@@ -140,10 +139,11 @@
             </div>
           </div>
           <p class="brevo-consent">By clicking “Yes, keep me updated”, you subscribe to news and menu updates by email. You can unsubscribe at any time. Read our <a href="#privacy">privacy notice</a>.</p>
-          <button class="button button-coral submit-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /></svg><span>Yes, keep me updated</span><span aria-hidden="true">→</span></button>
+          <button class="button button-coral submit-button" form="sib-form" type="submit"><svg class="icon progress-indicator__icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" /></svg><span>Yes, keep me updated</span><span class="button-arrow" aria-hidden="true">→</span></button>
           <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" />
           <input type="hidden" id="brevo-locale" name="locale" value="nl" />
         </form>
+        <iframe class="brevo-submit-frame" name="brevo-submit-frame" title="Newsletter submission" tabindex="-1" aria-hidden="true"></iframe>
         <p class="form-note">Regular test orders are arranged personally through WhatsApp or email.<br /><a href="#privacy">How we use your details</a></p>
       </div>
     </section>
@@ -154,7 +154,7 @@
         <div class="privacy-content">
           <p class="privacy-updated">Last updated: 21 October 2026</p>
           <h3>Who is responsible</h3>
-          <p>Hola Meals! is run by Esther Rodríguez in Utrecht. For privacy questions or requests, email <a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a>.</p>
+          <p>Hola Meals! is responsible for processing personal information collected through this website and newsletter. For privacy questions or requests, email <a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a>.</p>
 
           <h3>Information you send</h3>
           <p>The order form prepares an email in your own email application; the website itself does not submit or store that order form. When you subscribe to the newsletter, your email address and subscription record are sent directly to Brevo, our email marketing provider. Depending on your request, the information we process may also include your name, phone number, delivery address, order choices and delivery notes.</p>
@@ -176,7 +176,5 @@
   </main>
 
   <footer><a class="brand footer-brand" href="#top"><img class="brand-logo" src="assets/hola-meals-logo.svg" alt="" /><span>Hola Meals!</span></a><p>Nutritious meals, with a taste of Mexico. Made with love in Utrecht.</p><a href="mailto:holamealsutrecht@gmail.com">holamealsutrecht@gmail.com</a><a href="#privacy">Privacy &amp; cookies</a><small>© <span id="year"></span> Hola Meals!</small></footer>
-  <script>window.REQUIRED_CODE_ERROR_MESSAGE='Please choose a country code';window.LOCALE='nl';window.EMAIL_INVALID_MESSAGE=window.SMS_INVALID_MESSAGE='Vul een geldig e-mailadres in.';window.REQUIRED_ERROR_MESSAGE='Vul je e-mailadres in.';window.GENERIC_INVALID_MESSAGE='Vul een geldig e-mailadres in.';window.INVALID_NUMBER='Vul een geldig nummer in.';window.INVALID_DATE='Vul een geldige datum in.';window.REQUIRED_MULTISELECT_MESSAGE='Selecteer ten minste één optie.';window.translation={common:{selectedList:'{quantity} list selected',selectedLists:'{quantity} lists selected',selectedOption:'{quantity} selected',selectedOptions:'{quantity} selected'}};window.AUTOHIDE=true;</script>
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
